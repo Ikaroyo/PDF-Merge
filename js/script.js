@@ -42,6 +42,9 @@ function updatePDFList() {
     document.getElementById("sort-button").classList.remove("disabled");
   }
 
+  if (pdfFiles.length >= 1) {
+    document.getElementById("delete-button").classList.remove("disabled");
+  }
   for (var i = 0; i < pdfFiles.length; i++) {
     var listItem = document.createElement("li");
     listItem.textContent = pdfFiles[i].name;
@@ -97,6 +100,46 @@ function deleteAllFiles() {
   document.getElementById("pdf-list").innerHTML = "Aun no has subido archivos";
 }
 
+function loadFiles() {
+  /* open file dialog */
+  const fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.accept = ".pdf";
+  fileInput.multiple = true;
+
+  fileInput.addEventListener("change", function (event) {
+    const files = event.target.files;
+    for (let i = 0; i < files.length; i++) {
+      if (files[i].type === "application/pdf") {
+        var isDuplicate = pdfFiles.some(function (pdfFile) {
+          return (
+            pdfFile.name === files[i].name && pdfFile.size === files[i].size
+          );
+        });
+
+        if (isDuplicate) {
+          alert("El archivo " + files[i].name + " ya está en la lista.");
+        } else {
+          pdfFiles.push(files[i]);
+          document.getElementById("delete-button").classList.remove("disabled");
+          if (pdfFiles.length >= 2) {
+            document
+              .getElementById("merge-button")
+              .classList.remove("disabled");
+            document.getElementById("sort-button").classList.remove("disabled");
+          }
+        }
+      }
+    }
+
+    // Actualizar la lista de archivos PDF después de haber procesado todos los archivos seleccionados
+    updatePDFList();
+  });
+
+  // Disparar el evento de clic para abrir el cuadro de diálogo de selección de archivos
+  fileInput.click();
+}
+
 document
   .getElementById("sort-button")
   .addEventListener("click", sortFilesByName, false);
@@ -107,3 +150,7 @@ document
 document
   .getElementById("delete-button")
   .addEventListener("click", deleteAllFiles, false);
+
+document
+  .getElementById("load-files")
+  .addEventListener("click", loadFiles, false);
