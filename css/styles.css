@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Permanent+Marker&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+}
+
+
+.dancing-script {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+    align-self: last baseline;
+    padding-left: 10px;
+    margin-left: 10px;
+    /* transparent background */
+    color: #1e1e1e;
+    font-size: 20px;
+    font-weight: bold;
+    /* text shadow */
+
+    text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 0 2px 0 #ffffff, 2px 0 0 #ffffff, 0 -2px 0 #ffffff, -2px 0 0 #ffffff, 2px 2px 5px #ffffff;
+
+
+}
+
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 600px;
+}
+
+.second {
+    position: absolute;
+    /* Elemento posicionado de forma absoluta dentro del body */
+    top: 600px;
+    /* Se fija en la parte inferior */
+    width: 100%;
+    /* Ancho completo */
+    max-height: calc(100vh - 600px);
+    /* Altura máxima igual a la altura de la ventana menos la altura del .main */
+    overflow-y: auto;
+    /* Agrega scroll vertical si el contenido es mayor que la altura máxima */
+    /* scroll bar style */
+    scrollbar-width: thin;
+    /* Ancho de la barra de desplazamiento */
+    scrollbar-color: #b9b9b9 #333;
+
+
+
+}
+
+#container {
+    text-align: center;
+}
+
+#drag-drop-zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #555;
+    border-radius: 10px;
+    padding: 100px;
+    margin: 20px;
+    text-align: center;
+    background-color: #333;
+    cursor: pointer;
+    width: 80vw;
+    height: 100px;
+}
+
+#file-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0;
+}
+
+#file-list ul>li {
+    margin-bottom: 10px;
+    background-color: #444;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#file-list ul>li:hover {
+    background-color: #777;
+}
+
+
+#pdf-list {
+    list-style-type: none;
+    padding: 0;
+    /* Añadido para quitar el relleno predeterminado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pdf-list li {
+    margin-bottom: 10px;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#sort-button {
+    display: flex;
+    flex-direction: row;
+    background-color: #000;
+    color: #ffffff;
+    width: auto;
+    height: 60px;
+    border: 2px solid #2f91af;
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+#sort-button:hover {
+    background-color: #2f91af;
+}
+
+
+
+#merge-button {
+    display: flex;
+    flex-direction: row;
+    background-color: #000;
+    border: 2px solid #ec1a1a;
+    color: #ffffff;
+    width: auto;
+    height: 60px;
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0;
+    width: 100%;
+
+}
+
+button {
+    padding: 10px;
+    margin: 0;
+}
+
+button img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+#merge-button:hover {
+    background-color: #ec1a1a;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+
+}
+
+#delete-button {
+    display: flex;
+    flex-direction: row;
+    background-color: #000;
+    color: #ffffff;
+    width: auto;
+    height: 60px;
+    border: 2px solid #168031;
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+#delete-button:hover {
+    background-color: #168031;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #555;
+    width: 80vw;
+    margin: 10px 0;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 0;
+    width: 100%;
+}
+
+#pdf-count {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #2f91af;
+    font-size: 20px;
+    padding: 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0;
+    width: 100%;
+}
+
+.logo img {
+    width: 100px;
+}
