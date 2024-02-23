@@ -42,35 +42,11 @@ body {
 
 }
 
-.main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+h1 {
     margin: 0;
     padding: 0;
-    height: 600px;
-}
-
-.second {
-    position: absolute;
-    /* Elemento posicionado de forma absoluta dentro del body */
-    top: 600px;
-    /* Se fija en la parte inferior */
+    text-align: center;
     width: 100%;
-    /* Ancho completo */
-    max-height: calc(100vh - 600px);
-    /* Altura máxima igual a la altura de la ventana menos la altura del .main */
-    overflow-y: auto;
-    /* Agrega scroll vertical si el contenido es mayor que la altura máxima */
-    /* scroll bar style */
-    scrollbar-width: thin;
-    /* Ancho de la barra de desplazamiento */
-    scrollbar-color: #b9b9b9 #333;
-
-
-
 }
 
 #container {
@@ -84,13 +60,13 @@ body {
     align-items: center;
     border: 2px dashed #555;
     border-radius: 10px;
-    padding: 100px;
+    padding: 50px;
     margin: 20px;
     text-align: center;
     background-color: #333;
     cursor: pointer;
     width: 80vw;
-    height: 100px;
+    height: 20vh;
 }
 
 #file-list {
@@ -242,13 +218,14 @@ h2 {
     margin: 10px;
     padding: 0;
     width: 100%;
+    font-size: 16px;
 }
 
 #pdf-count {
     margin-left: 10px;
     font-weight: bold;
     color: #2f91af;
-    font-size: 20px;
+    font-size: 16px;
     padding: 0;
 }
 
