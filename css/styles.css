@@ -4,40 +4,17 @@
 *::before,
 *::after {
     box-sizing: border-box;
-
-}
-
-
-.dancing-script {
-    font-family: "Permanent Marker", cursive;
-    font-weight: 400;
-    font-style: normal;
-
-    align-self: last baseline;
-    padding-left: 10px;
-    margin-left: 10px;
-    /* transparent background */
-    color: #1e1e1e;
-    font-size: 16px;
-    font-weight: bold;
-    /* text shadow */
-
-    text-shadow: 2px 2px 0 #ffffff, -2px -2px 0 #ffffff, 2px -2px 0 #ffffff, -2px 2px 0 #ffffff, 0 2px 0 #ffffff, 2px 0 0 #ffffff, 0 -2px 0 #ffffff, -2px 0 0 #ffffff, 2px 2px 5px #ffffff;
 }
 
 body {
     background-color: #1e1e1e;
-    color: #ffffff;
+    color: #fff;
     font-family: "Anta", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     display: flex;
     flex-direction: column;
-    justify-content: start;
     align-items: center;
     height: 100vh;
     margin: 0;
-
 }
 
 h1 {
@@ -53,7 +30,6 @@ h1 {
 
 #drag-drop-zone {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 2px dashed #555;
@@ -69,9 +45,8 @@ h1 {
 
 #drag-drop-zone:hover {
     background-color: #444;
-    border: 2px dashed #777;
+    border-color: #777;
 }
-
 
 #file-list {
     display: flex;
@@ -81,6 +56,17 @@ h1 {
     width: 100%;
     margin-top: 20px;
     padding: 0;
+}
+
+.dancing-script {
+    font-family: "Permanent Marker", cursive;
+    font-weight: bold;
+    align-self: last baseline;
+    padding-left: 10px;
+    margin-left: 10px;
+    color: #1e1e1e;
+    font-size: 16px;
+    text-shadow: 2px 2px 2px #fff, -2px -2px 2px #fff, 4px -4px 2px #fff, -4px 4px 2px #fff, 0 4px 2px #fff, 4px 0 2px #fff, 0 -4px 2px #fff, -4px 0 2px #fff, 4px 4px 10px #fff;
 }
 
 #file-list ul>li {
@@ -100,7 +86,6 @@ h1 {
 #pdf-list {
     list-style-type: none;
     padding: 0;
-    /* Añadido para quitar el relleno predeterminado */
     display: flex;
     flex-direction: column;
     align-items: center;
