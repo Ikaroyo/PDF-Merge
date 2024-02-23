@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/ikaroyo/PDF-Merge">https://github.com/ikaroyo/PDF-Merge</a>
+    <a href="https://ikaroyo.github.io/PDF-Merge/">https://ikaroyo.github.io/PDF-Merge/</a>
 </p>
 
 <p align="center">
