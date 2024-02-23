@@ -18,7 +18,7 @@
     margin-left: 10px;
     /* transparent background */
     color: #1e1e1e;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     /* text shadow */
 
@@ -64,7 +64,7 @@ h1 {
     background-color: #333;
     cursor: pointer;
     width: 80vw;
-    height: 20vh;
+    height: 15vh;
 }
 
 #file-list {
