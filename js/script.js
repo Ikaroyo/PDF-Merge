@@ -124,17 +124,15 @@ class PDFManager {
     const data_pdf = pdfDataUri.substring(pdfDataUri.indexOf(",") + 1);
 
     // Generamos el nombre del archivo usando la fecha y hora actual
-    const fileName = new Date().toISOString().slice(0, 19).replace("T", "-");
+    const fileName =
+      new Date().toISOString().slice(0, 19).replace("T", "-") + ".pdf";
 
-    // Solicitamos al usuario que elija la ubicación donde guardar el archivo PDF
-    const fileHandle = await window.showSaveFilePicker({
-      suggestedName: `${fileName}.pdf`,
-    });
-
-    const writableStream = await fileHandle.createWritable();
-    const encoder = new TextEncoder();
-    await writableStream.write(encoder.encode(atob(data_pdf)));
-    await writableStream.close();
+    // Creamos un enlace de descarga y simulamos un clic para iniciar la descarga
+    const link = document.createElement("a");
+    link.href = "data:application/pdf;base64," + data_pdf;
+    link.download = fileName;
+    link.target = "_blank";
+    link.click();
   }
 
   deleteAllFiles() {
