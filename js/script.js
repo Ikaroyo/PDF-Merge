@@ -17,6 +17,8 @@ class PDFManager {
       false
     );
 
+    this.toast = document.getElementById("toast");
+
     document
       .getElementById("sort-button")
       .addEventListener("click", this.sortFilesByName.bind(this), false);
@@ -69,7 +71,9 @@ class PDFManager {
         });
 
         if (isDuplicate) {
-          alert("El archivo " + files[i].name + " ya está en la lista.");
+          this.toastAdd(
+            "El archivo " + files[i].name + " ya se encuentra en la lista"
+          );
         } else {
           this.pdfFiles.push(files[i]);
           document.getElementById("delete-button").classList.remove("disabled");
@@ -84,6 +88,46 @@ class PDFManager {
     }
 
     this.updatePDFList();
+  }
+
+  toastAdd(text) {
+    // create and show the toast
+    console.log(text);
+
+    const toast = document.createElement("div");
+    toast.classList.add("toast");
+    toast.textContent = text;
+
+    document.body.appendChild(toast);
+
+    // Calcula el retraso para mostrar el toast
+    const delay = 300; // Milisegundos
+    const existingToasts = document.querySelectorAll(".toast");
+    const offsetY = existingToasts.length * (toast.offsetHeight + 20); // Ajusta según el espacio deseado entre los toast
+
+    if (existingToasts.length > 0) {
+      toast.style.top = `${offsetY}px`; // Establece la posición vertical del toast
+    } else {
+      toast.style.top = "0px"; // Establece la ubicación vertical del primer toast
+    }
+
+    // Establece un temporizador para mostrar el toast con el retraso calculado
+    setTimeout(() => {
+      toast.style.top = `${offsetY}px`; // Establece la posición vertical del toast
+      toast.classList.add("show"); // Muestra el toast
+    }, delay * existingToasts.length);
+
+    // Establece otro temporizador para eliminar el toast después de cierto tiempo
+    setTimeout(() => {
+      // Mueve el toast hacia arriba y luego lo elimina
+      toast.style.top = "-50px"; // Mueve el toast fuera de la pantalla
+      toast.classList.remove("show"); // Oculta el toast
+
+      // Elimina el toast después de la transición
+      setTimeout(() => {
+        document.body.removeChild(toast);
+      }, 300); // Tiempo de la transición CSS
+    }, delay * existingToasts.length + 3000); // 3000 milliseconds = 3 seconds
   }
 
   updatePDFList() {

@@ -11,6 +11,44 @@
     <link rel="icon" href="src/logo-title.png">
 
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .toast {
+            position: fixed;
+            top: -100px;
+            /* Inicia fuera de la pantalla */
+            left: 50%;
+            /* Centra horizontalmente */
+            transform: translate(-50%, 0);
+            /* Centra horizontalmente */
+            max-width: 400px;
+            /* Limita el ancho máximo */
+            max-height: 100px;
+            /* Limita la altura máxima */
+            overflow: auto;
+            /* Habilita el desplazamiento vertical si el contenido excede la altura máxima */
+            background-color: #ffecb7;
+            /* Color de fondo pastel */
+            border-radius: 10px;
+            /* Bordes redondeados */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+            /* Sombra */
+            padding: 15px 20px;
+            color: #333;
+            /* Color del texto */
+            font-size: 16px;
+            /* Tamaño de fuente */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .toast.show {
+            top: 20px;
+            /* Posición superior */
+            transform: translate(-50%, 0);
+            /* Centra horizontalmente */
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,6 +84,7 @@
             <ul class="pdf-list" id="pdf-list">Aun no has subido archivos</ul>
         </div>
     </div>
+
 
     <!--
     <script src='https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.js'></script>
