@@ -7,14 +7,17 @@
 }
 
 body {
-    background-color: #1e1e1e;
-    color: #fff;
+    background-color: #ffffff;
+    /* Fondo blanco */
+    color: #444;
     font-family: "Anta", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 20px;
+    /* Añadido para dar más espacio al contenido */
 }
 
 h1 {
@@ -32,20 +35,24 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px dashed #555;
+    border: 2px dashed #2f91af;
     border-radius: 10px;
     padding: 50px;
     margin: 20px;
     text-align: center;
-    background-color: #333;
+    background-color: #f0f0f0;
+    /* Color de fondo más claro */
     cursor: pointer;
     width: 80vw;
     height: 15vh;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #drag-drop-zone:hover {
-    background-color: #444;
-    border-color: #777;
+    background-color: #e0e0e0;
+    /* Cambio de color al pasar el cursor */
+    border-color: #168794;
 }
 
 #file-list {
@@ -71,17 +78,19 @@ h1 {
 
 #file-list ul>li {
     margin-bottom: 10px;
-    background-color: #444;
+    background-color: #f0f0f0;
+    /* Cambio de color */
     padding: 10px 20px;
     text-align: center;
     width: 100%;
     border-radius: 5px;
+    box-shadow: 3px 3px 6px #bcbcbc, -3px -3px 6px #ffffff;
 }
 
 #file-list ul>li:hover {
-    background-color: #777;
+    background-color: #e0e0e0;
+    /* Cambio de color al pasar el cursor */
 }
-
 
 #pdf-list {
     list-style-type: none;
@@ -93,54 +102,27 @@ h1 {
 
 #pdf-list li {
     margin-bottom: 10px;
-    background-color: #444;
+    background-color: #f0f0f0;
+    /* Cambio de color */
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 3px 3px 6px #bcbcbc, -3px -3px 6px #ffffff;
 }
 
 button {
     font-size: 16px;
-    padding: 10px;
+    padding: 12px 24px;
+    /* Aumento del espacio interno */
     text-align: center;
     margin: 10px;
     cursor: pointer;
     font-weight: bold;
-}
-
-#sort-button {
-    display: flex;
-    flex-direction: row;
-    background-color: #000;
-    color: #ffffff;
-    width: auto;
-    height: 50px;
-    border: 2px solid #2f91af;
-    padding: 20px;
-    margin: 10px;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-}
-
-#sort-button:hover {
-    background-color: #2f91af;
-}
-
-
-
-#merge-button {
-    display: flex;
-    flex-direction: row;
-    background-color: #000;
-    border: 2px solid #ec1a1a;
-    color: #ffffff;
-    width: auto;
-    height: 50px;
-    padding: 20px;
-    margin: 10px;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
+    border: none;
+    border-radius: 10px;
+    /* Aumento del radio de borde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    /* Sombra más suave */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .buttons {
@@ -157,51 +139,58 @@ button img {
     margin-right: 5px;
 }
 
-#merge-button:hover {
-    background-color: #ec1a1a;
-}
-
 .disabled {
     opacity: 0.5;
     cursor: not-allowed;
     pointer-events: none;
-
 }
 
+#merge-button,
+#sort-button,
 #delete-button {
-    display: flex;
-    flex-direction: row;
-    background-color: #000;
-    color: #ffffff;
-    width: auto;
-    height: 50px;
-    border: 2px solid #168031;
-    padding: 20px;
-    margin: 10px;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
+    background-color: #ffffff;
+    color: #444;
 }
 
+#merge-button:hover,
+#sort-button:hover,
 #delete-button:hover {
-    background-color: #168031;
+    background-color: #f5f5f5;
+    /* Cambio de color al pasar el cursor */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    /* Sombra más pronunciada */
+}
+
+#merge-button img,
+#sort-button img,
+#delete-button img {
+    vertical-align: text-bottom;
+    /* Ajuste para centrar verticalmente la imagen */
 }
 
 hr {
     border: none;
-    border-top: 1px solid #555;
+    border-top: 1px solid #ddd;
+    /* Color de línea más claro */
     width: 80vw;
-    margin: 10px 0;
+    margin: 20px 0;
+    /* Mayor espacio alrededor de la línea */
 }
 
 h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 20px 0;
+    /* Mayor espacio alrededor del título */
     padding: 0;
     width: 100%;
-    font-size: 16px;
+    font-size: 20px;
+    /* Tamaño de fuente más grande */
+    font-weight: bold;
+    /* Texto en negrita */
+    color: #333;
+    /* Color de texto más oscuro */
 }
 
 #pdf-count {
@@ -216,7 +205,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
+    /* Mayor espacio entre el título y el logo */
     padding: 0;
     width: 100%;
 }
@@ -229,11 +219,21 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #fff;
+    margin-top: 20px;
+    /* Mayor espacio entre el título y la carga de archivos */
+    padding: 20px;
+    /* Mayor espacio interno */
+    background-color: #f5f5f5;
+    /* Color de fondo más claro */
+    border: 2px solid #ddd;
+    /* Borde más claro */
+    border-radius: 10px;
+    /* Radio de borde */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    /* Sombra más pronunciada */
 }
 
 #load-files:hover {
-    background-color: #c4c4c4;
+    background-color: #e0e0e0;
+    /* Cambio de color al pasar el cursor */
 }
